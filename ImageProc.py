@@ -20,10 +20,12 @@ image = cv2.imdecode(image_array, cv2.IMREAD_COLOR)
 output_path = "image.jpg"
 save_to_file(image, output_path)
 
-target_resolution = 0.5
-image = cv2.resize(image, (0, 0), fx=target_resolution, fy=target_resolution)
+target_resolution_scale = 0.5
+image = cv2.resize(image, (0, 0), fx=target_resolution_scale, fy=target_resolution_scale)
 image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 image = cv2.rotate(image, cv2.ROTATE_90_CLOCKWISE)
+
+print(image)
 
 output_path = "image_processed.jpg"
 save_to_file(image, output_path)
